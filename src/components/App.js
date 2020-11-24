@@ -22,10 +22,14 @@ const App = () => {
     setTimer(false);
   }
   useEffect(()=>{
+    let timeoutId;
     if(timer && countdown>0){
-      setTimeout(()=>{
+      timeoutId = setTimeout(()=>{
         setCountDown(countdown-1);
       },1000)
+    }
+    return ()=>{
+      clearTimeout(timeoutId);
     } 
   })
   return (
