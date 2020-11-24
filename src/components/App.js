@@ -15,7 +15,7 @@ const App = () => {
 
   const handleChange = (event) =>{
     if(isNaN(event.target.value)){
-      return;
+      setCountDown(0);
     }
     setCountDown(Math.trunc(event.target.value));
     setTimer(false);
